@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+	<style type="text/css">
+      .dosbox-container { width: 640px; height: 400px; }
+      .dosbox-container > .dosbox-overlay { background: url(https://js-dos.com/cdn/digger.png); }
+    </style>
+</head>
+	<body>
+		<h1><%= title %></h1>
+		<p>Welcome to <%= title %></p>
+		<div id="dosbox"></div>
+		<br/>
+		<script type="text/javascript" src="/javascripts/js-dos-api.js"></script>
+		<script type="text/javascript">
+			  var dosbox = new Dosbox(
+			  {
+				id: "dosbox", onload: function (dosbox)
+				{
+				  dosbox.run("/games/digger.zip", "./DIGGER.COM");
+				},
+				onrun: function (dosbox, app)
+				{
+				  console.log("App '" + app + "' is runned");
+				}
+			  });
+			</script>
+
+	</body>
+</html>
