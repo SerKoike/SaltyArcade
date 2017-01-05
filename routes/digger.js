@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET Space Invaders game page. */
+/* GET Digger game page. */
 router.get('/', function (req, res, next) {
     res.render('digger'/*in view folder*/, { title: 'SaltyArcade' });
 });
