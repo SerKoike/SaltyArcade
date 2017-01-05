@@ -53,7 +53,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Link to pages :
 //in folder 'views' is the html
 //in folder 'route' is the javascript
-app.use('/', index);
 app.use('/digger', digger);
 app.use('/oregontrails', oregon);
 app.use('/spaceinvader', space);
