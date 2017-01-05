@@ -8,6 +8,12 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
+var digger = require('./routes/digger');
+var oregon = require('./routes/oregontrails');
+var space = require('./routes/spaceinvader');
+var wf3d = require('./routes/wolfenstein');
+
+
 var app = express();
 
 // view engine setup
@@ -22,8 +28,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//Link to pages :
+//in folder 'views' is the html
+//in folder 'route' is the javascript
 app.use('/', index);
 app.use('/users', users);
+app.use('/digger', digger);
+app.use('/oregontrails', oregon);
+app.use('/spaceinvader', space);
+app.use('/wolfenstein', wf3d);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
