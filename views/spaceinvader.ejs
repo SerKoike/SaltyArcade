@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Space Invaders</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+	<style type="text/css">
+      .dosbox-container { width: 640px; height: 400px; }
+    </style>
+</head>
+	<body>
+		<h1><%= title %></h1>
+		<div id="dosbox"></div>
+		<br/>
+		<script type="text/javascript" src="/javascripts/js-dos-api.js"></script>
+		<script type="text/javascript">
+			var dosbox = new Dosbox(
+			{
+				id: "dosbox", onload: function (dosbox)
+				{
+					dosbox.run("/games/SpaceInvader.zip", "./INVADERS.COM");
+				},
+				onrun: function (dosbox, app)
+				{
+					console.log("App '" + app + "' is runned");
+				}
+			});
+		</script>
+		<p>CTRL to fire</p>
+	</body>
+</html>
