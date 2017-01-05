@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET index page. */
 router.get('/', function(req, res,next) {
-  res.render('index', { title: 'Express' });   
+  res.render('index'/*in view folder*/, { title: 'SaltyArcade' });   
 });
 
 /* GET login page. */
@@ -30,8 +30,7 @@ router.route("/login").get(function(req,res){
             }else{                                     
                 req.session.user = doc;
                 res.send(200);
-            //    res.redirect("/home");
-            }
+            //    res.redirect("/home");            }
         }
     });
 });
