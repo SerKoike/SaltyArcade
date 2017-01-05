@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-	<style type="text/css">
-      .dosbox-container { width: 640px; height: 400px; }
-      .dosbox-container > .dosbox-overlay { background: url(/images/wf3d.jpg); }
-    </style>
-</head>
+	<head>
+		<title><%= title %></title>
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+		<style type="text/css">
+			a{margin-left: 20px; text-decoration: none;}
+			a:hover{text-decoration: underline;}
+		</style>
+	</head>
 	<body>
 		<h1><%= title %></h1>
 		<p>Welcome to <%= title %></p>
-		<div id="dosbox"></div>
-		<br/>
-		<ul id="gameList">
-			<a href="/digger"><li>Digger</li></a>
-			<a href="/oregontrails"><li>Oregon Trails</li></a>
-			<a href="/spaceinvader"><li>Space Invaders</li></a>
-			<a href="/wolfenstein"><li>Wolfenstein</li></a>
-		</ul>
-
-	</body>
+    
+		<p>
+			<a href="/login">Connexion </a>
+			<a href="/register">Creer </a>
+		</p>
+  </body>
 </html>
