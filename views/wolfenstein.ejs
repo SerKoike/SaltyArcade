@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wolfenstein 3D</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+	<style type="text/css">
+      .dosbox-container { width: 640px; height: 400px; }
+      .dosbox-container > .dosbox-overlay { background: url(/images/wf3d.jpg); }
+    </style>
+</head>
+	<body>
+		<h1><%= title %></h1>
+		<div id="dosbox"></div>
+		<br/>
+		<script type="text/javascript" src="/javascripts/js-dos-api.js"></script>
+		<script type="text/javascript">
+			  var dosbox = new Dosbox(
+			  {
+				id: "dosbox", onload: function (dosbox)
+				{
+				  dosbox.run("/games/wolfenstein.zip", "./WOLF3D.EXE");
+				},
+				onrun: function (dosbox, app)
+				{
+				  console.log("App '" + app + "' is runned");
+				}
+			  });
+			</script>
+
+	</body>
+</html>
