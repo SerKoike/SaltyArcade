@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title %></title>
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+		<style type="text/css">
+			a{margin-left: 20px; text-decoration: none;}
+			a:hover{text-decoration: underline;}
+		</style>
+	</head>
+	<body>
+		<h1>Bonjour <%- user.name %></h1>
+		<p>Voici la liste des jeux disponibles</p>
+		<ul id="gameList">
+			<a href="/arkanoid"><li>Arkanoid (work in progress)</li></a>
+			<a href="/digger"><li>Digger</li></a>
+			<a href="/oregontrails"><li>Oregon Trails</li></a>
+			<a href="/spaceinvader"><li>Space Invaders</li></a>
+			<a href="/wolfenstein"><li>Wolfenstein (work in progress)</li></a>
+		</ul>
+		<p><a href="/logout">Deconnexion</a></p>
+	</body>
+</html>

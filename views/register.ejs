@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 
@@ -8,14 +8,12 @@
     <title><%= title %></title>
     <link rel="stylesheet" href="stylesheets/bootstrap.min.css" media="screen">
     <style type="text/css">
-    .m15{ margin: 15px;}
-     .tc{ text-align: center;font-size: 18px;font-weight: 600;}
+		.m15{ margin: 15px;}
+		.tc{ text-align: center;font-size: 18px;font-weight: 600;}
     </style>
 </head>
-<!--body screen_capture_injected="true"-->
 <body>
     <div class="container">
-    <!--%- message %-->
         <form class="col-sm-offset-4 col-sm-4 form-horizontal" role="form" method="post" onsubmit="return false">
             <fieldset>
                 <legend></legend>
@@ -63,35 +61,36 @@
     <script type="text/javascript" src="javascripts/jquery.min.js"></script>
     <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
     <script type="text/javascript">
-    $(function(){ 
-        $("#login1").click(function(){ 
-            location.href = 'login';
-        });
-        $("#register1").click(function(){ 
-            var username = $("#username").val();
-            var password = $("#password").val();
-            var password1 = $("#password1").val();
-            if(password !== password1){ 
-                $("#password").css("border","1px solid red");
-                $("#password1").css("border","1px solid red");
-            }else if(password === password1){
-            var data = {"uname":username,"upwd":password};
-            $.ajax({ 
-                url: '/register',
-                type: 'post',
-                data: data,
-                success: function(data,status){ 
-                    if(status == 'success'){ 
-                        location.href = 'login';
-                    }
-                },
-                error: function(data,err){ 
-                        location.href = 'register';
-                }
-            }); 
-        }
-        });
-    });
-</script>
+		$(function(){ 
+			$("#login1").click(function(){ 
+				location.href = 'login';
+			});
+			$("#register1").click(function(){ 
+				var username = $("#username").val();
+				var password = $("#password").val();
+				var password1 = $("#password1").val();
+				if(password !== password1){ 
+					$("#password").css("border","1px solid red");
+					$("#password1").css("border","1px solid red");
+				}else if(password === password1){
+				var data = {"uname":username,"upwd":password};
+				$.ajax({ 
+					url: '/register',
+					type: 'post',
+					data: data,
+					success: function(data,status){ 
+						if(status == 'success'){ 
+							location.href = 'login';
+						}
+					},
+					error: function(data,err){ 
+							location.href = 'register';
+					}
+				}); 
+			}
+			});
+		});
+	</script>
 </body>
+
 </html>
